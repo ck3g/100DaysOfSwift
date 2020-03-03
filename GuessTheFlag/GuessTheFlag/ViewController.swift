@@ -52,21 +52,22 @@ class ViewController: UIViewController {
   }
 
   @IBAction func buttonTapped(_ sender: UIButton) {
-    var title: String
-
     questionsAnswered += 1
 
     if sender.tag == correctAnswer {
-      title = "Correct"
       score += 1
     } else {
-      title = "Wrong"
+      let message = "Nope. That's the flag of \(countries[sender.tag].uppercased())"
       score -= 1
+
+      let ac = UIAlertController(title: "Wrong", message: message, preferredStyle: .alert)
+      ac.addAction(UIAlertAction(title: "Continue", style: .default))
+      present(ac, animated: true)
     }
 
     if questionsAnswered >= 10 {
-      let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
-      ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: resetGame(action:)))
+      let ac = UIAlertController(title: "Well done!", message: "Your score is \(score)", preferredStyle: .alert)
+      ac.addAction(UIAlertAction(title: "Play again", style: .default, handler: resetGame))
       present(ac, animated: true)
     } else {
       askQuestion()
