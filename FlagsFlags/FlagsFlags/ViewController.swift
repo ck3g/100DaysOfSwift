@@ -10,11 +10,22 @@ import UIKit
 
 class ViewController: UITableViewController {
 
+  let countries = ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
   }
 
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return countries.count
+  }
 
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Flag", for: indexPath)
+    cell.textLabel?.text = countries[indexPath.row]
+
+    return cell
+  }
 }
 
