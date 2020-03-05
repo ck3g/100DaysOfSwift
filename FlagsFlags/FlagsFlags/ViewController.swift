@@ -23,7 +23,7 @@ class ViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Flag", for: indexPath)
-    cell.textLabel?.text = countries[indexPath.row]
+    cell.textLabel?.text = countries[indexPath.row].uppercased()
 
     return cell
   }

@@ -16,6 +16,8 @@ class DetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(actionTapped))
+
     if let currentCountry = country {
       flagImage.image = UIImage(named: currentCountry)
       flagImage.layer.borderWidth = 1
@@ -23,6 +25,19 @@ class DetailViewController: UIViewController {
       
       title = currentCountry.uppercased()
     }
+  }
+
+  @objc func actionTapped() {
+    guard let image = flagImage.image?.jpegData(compressionQuality: 0.8) else {
+      print("No image")
+      return
+    }
+
+    guard let currentCountry = country else { return }
+
+    let vc = UIActivityViewController(activityItems: [image, currentCountry.uppercased()], applicationActivities: [])
+    vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+    present(vc, animated: true)
   }
 
 }
