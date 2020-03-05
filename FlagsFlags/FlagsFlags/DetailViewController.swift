@@ -10,12 +10,19 @@ import UIKit
 
 class DetailViewController: UIViewController {
   @IBOutlet var flagImage: UIImageView!
-  @IBOutlet var countryLabel: UILabel!
+
+  var country: String?
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Do any additional setup after loading the view.
+    if let currentCountry = country {
+      flagImage.image = UIImage(named: currentCountry)
+      flagImage.layer.borderWidth = 1
+      flagImage.layer.borderColor = UIColor.lightGray.cgColor
+      
+      title = currentCountry.uppercased()
+    }
   }
 
 }
