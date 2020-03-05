@@ -13,6 +13,7 @@
 		341D51DF240F9BC700FD53A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341D51DD240F9BC700FD53A3 /* Main.storyboard */; };
 		341D51E1240F9BC900FD53A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 341D51E0240F9BC900FD53A3 /* Assets.xcassets */; };
 		341D51E4240F9BC900FD53A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341D51E2240F9BC900FD53A3 /* LaunchScreen.storyboard */; };
+		341D51EC2410939B00FD53A3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341D51EB2410939B00FD53A3 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		341D51E0240F9BC900FD53A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		341D51E3240F9BC900FD53A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		341D51E5240F9BC900FD53A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		341D51EB2410939B00FD53A3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				341D51E0240F9BC900FD53A3 /* Assets.xcassets */,
 				341D51E2240F9BC900FD53A3 /* LaunchScreen.storyboard */,
 				341D51E5240F9BC900FD53A3 /* Info.plist */,
+				341D51EB2410939B00FD53A3 /* DetailViewController.swift */,
 			);
 			path = FlagsFlags;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				341D51DC240F9BC700FD53A3 /* ViewController.swift in Sources */,
 				341D51D8240F9BC700FD53A3 /* AppDelegate.swift in Sources */,
 				341D51DA240F9BC700FD53A3 /* SceneDelegate.swift in Sources */,
+				341D51EC2410939B00FD53A3 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

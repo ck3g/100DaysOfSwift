@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,6 +44,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zga-Rh-zFC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="818.84057971014499" y="136.60714285714286"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="PZD-Hc-j3K">
+            <objects>
+                <viewController storyboardIdentifier="Detail" id="KZ8-ad-hLD" customClass="DetailViewController" customModule="FlagsFlags" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Opp-0C-hfU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jw-45-KbR">
+                                <rect key="frame" x="186" y="496" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wzS-KP-D0m">
+                                <rect key="frame" x="57" y="302" width="300" height="150"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wzS-KP-D0m" firstAttribute="leading" secondItem="Rxu-Bd-MCS" secondAttribute="leading" constant="57" id="1Aw-0P-tSI"/>
+                            <constraint firstItem="wzS-KP-D0m" firstAttribute="top" secondItem="Rxu-Bd-MCS" secondAttribute="top" constant="258" id="7hx-cj-OHT"/>
+                            <constraint firstItem="Rxu-Bd-MCS" firstAttribute="bottom" secondItem="0jw-45-KbR" secondAttribute="bottom" constant="345" id="Bre-2L-OPM"/>
+                            <constraint firstItem="0jw-45-KbR" firstAttribute="top" secondItem="wzS-KP-D0m" secondAttribute="bottom" constant="44" id="Fo1-nE-Pcf"/>
+                            <constraint firstItem="wzS-KP-D0m" firstAttribute="centerX" secondItem="0jw-45-KbR" secondAttribute="centerX" id="XMe-NV-H2a"/>
+                            <constraint firstItem="0jw-45-KbR" firstAttribute="centerX" secondItem="Opp-0C-hfU" secondAttribute="centerX" id="hb8-iJ-8eI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rxu-Bd-MCS"/>
+                    </view>
+                    <connections>
+                        <outlet property="countryLabel" destination="0jw-45-KbR" id="Iph-Xx-CC3"/>
+                        <outlet property="flagImage" destination="wzS-KP-D0m" id="STo-kB-koD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pO5-iU-Kki" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1594.2028985507247" y="136.60714285714286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sFq-er-41n">
