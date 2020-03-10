@@ -64,23 +64,26 @@ class ViewController: UITableViewController {
   func submit(_ answer: String) {
     let lowerAnswer = answer.lowercased()
 
-    if isPossible(word: lowerAnswer) {
-      if isOriginal(word: lowerAnswer) {
-        if isReal(word: lowerAnswer) {
-          usedWords.insert(answer, at: 0)
+    guard isReal(word: lowerAnswer) else {
+      showErrorMessage(title: "Word not recognized", message: "You can't just make them up, you know!")
+      return
+    }
 
-          let indexPath = IndexPath(row: 0, section: 0)
-          tableView.insertRows(at: [indexPath], with: .automatic)
-        } else {
-          showErrorMessage(title: "Word not recognized", message: "You can't just make them up, you know!")
-        }
-      } else {
-        showErrorMessage(title: "Word already used", message: "Be more original!")
-      }
-    } else {
+    guard isOriginal(word: lowerAnswer) else {
+      showErrorMessage(title: "Word already used", message: "Be more original!")
+      return
+    }
+
+    guard isPossible(word: lowerAnswer) else {
       guard let title = title else { return }
       showErrorMessage(title: "Word not possible", message: "You can't spell that word from \(title.lowercased()).")
+      return
     }
+
+    usedWords.insert(answer, at: 0)
+
+    let indexPath = IndexPath(row: 0, section: 0)
+    tableView.insertRows(at: [indexPath], with: .automatic)
   }
 
   func showErrorMessage(title: String, message: String) {
