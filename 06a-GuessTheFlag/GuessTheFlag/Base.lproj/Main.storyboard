@@ -17,6 +17,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dd6-cN-e7k">
                                 <rect key="frame" x="107" y="100" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Dd6-cN-e7k" secondAttribute="height" multiplier="2:1" id="oBv-n2-t6M"/>
+                                </constraints>
                                 <state key="normal" image="us"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KuY-O5-lgo"/>
@@ -24,6 +27,9 @@
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OQ-f3-1Hg">
                                 <rect key="frame" x="107" y="230" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8OQ-f3-1Hg" secondAttribute="height" multiplier="2:1" id="8JB-rO-rip"/>
+                                </constraints>
                                 <state key="normal" image="germany"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qjY-50-m5m"/>
@@ -31,6 +37,9 @@
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJe-ng-dBK">
                                 <rect key="frame" x="107" y="360" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nJe-ng-dBK" secondAttribute="height" multiplier="2:1" id="P4M-yb-hlT"/>
+                                </constraints>
                                 <state key="normal" image="spain"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RvT-6T-xq9"/>
@@ -40,11 +49,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8OQ-f3-1Hg" firstAttribute="centerX" secondItem="Dd6-cN-e7k" secondAttribute="centerX" id="1Ak-Ly-0fC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nJe-ng-dBK" secondAttribute="bottom" constant="20" id="3u0-Q4-Ada"/>
+                            <constraint firstItem="nJe-ng-dBK" firstAttribute="height" secondItem="8OQ-f3-1Hg" secondAttribute="height" id="9Gg-2V-Zp1"/>
                             <constraint firstItem="Dd6-cN-e7k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="B4k-Iv-fCE"/>
                             <constraint firstItem="nJe-ng-dBK" firstAttribute="centerX" secondItem="8OQ-f3-1Hg" secondAttribute="centerX" id="NCd-DK-ZEv"/>
                             <constraint firstItem="nJe-ng-dBK" firstAttribute="top" secondItem="8OQ-f3-1Hg" secondAttribute="bottom" constant="30" id="RdI-R0-3In"/>
                             <constraint firstItem="8OQ-f3-1Hg" firstAttribute="top" secondItem="Dd6-cN-e7k" secondAttribute="bottom" constant="30" id="XBd-3I-QK5"/>
                             <constraint firstItem="Dd6-cN-e7k" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="moq-DD-bE6"/>
+                            <constraint firstItem="8OQ-f3-1Hg" firstAttribute="height" secondItem="Dd6-cN-e7k" secondAttribute="height" id="vI5-nS-yuI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
