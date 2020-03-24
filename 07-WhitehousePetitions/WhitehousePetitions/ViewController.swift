@@ -9,11 +9,12 @@
 import UIKit
 
 class ViewController: UITableViewController {
-  var petitions = [String]()
+  var petitions = [Petition]()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+
+    
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
