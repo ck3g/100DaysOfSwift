@@ -16,6 +16,8 @@ class ViewController: UITableViewController {
 
     let urlString: String
 
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Credits", style: .plain, target: self, action: #selector(showCredits))
+
     if navigationController?.tabBarItem.tag == 0 {
       urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
     } else {
@@ -61,7 +63,15 @@ class ViewController: UITableViewController {
   }
 
   func showError() {
-    let ac = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again", preferredStyle: .alert)
+    presentAlert(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again")
+  }
+
+  @objc func showCredits() {
+    presentAlert(title: "Credits", message: "All the data comes from the We The People API of the Whitehouse")
+  }
+
+  func presentAlert(title: String, message: String) {
+    let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
     ac.addAction(UIAlertAction(title: "OK", style: .default))
 
     present(ac, animated: true)
