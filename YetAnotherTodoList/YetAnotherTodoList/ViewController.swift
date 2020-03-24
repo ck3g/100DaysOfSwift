@@ -29,8 +29,18 @@ class ViewController: UITableViewController {
   }
 
   @objc func addTodoItem() {
-    items.append("New item #\(items.count + 1)")
-    tableView.reloadData()
+    let ac = UIAlertController(title: "New item", message: nil, preferredStyle: .alert)
+    ac.addTextField()
+
+    let submitAction = UIAlertAction(title: "Add", style: .default) { [weak self, weak ac] _ in
+      guard let newItem = ac?.textFields?[0].text else { return }
+
+      self?.items.append(newItem)
+      self?.tableView.reloadData()
+    }
+
+    ac.addAction(submitAction)
+    present(ac, animated: true)
   }
 }
 
