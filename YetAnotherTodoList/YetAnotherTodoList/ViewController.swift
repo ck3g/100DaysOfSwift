@@ -13,7 +13,8 @@ class ViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+
+    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTodoItem))
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,6 +26,11 @@ class ViewController: UITableViewController {
     cell.textLabel?.text = items[indexPath.row]
 
     return cell
+  }
+
+  @objc func addTodoItem() {
+    items.append("New item #\(items.count + 1)")
+    tableView.reloadData()
   }
 }
 
