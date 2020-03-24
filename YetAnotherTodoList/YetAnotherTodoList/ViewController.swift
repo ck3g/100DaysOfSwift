@@ -15,6 +15,7 @@ class ViewController: UITableViewController {
     super.viewDidLoad()
 
     navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTodoItem))
+    navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearItemsList))
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,6 +42,11 @@ class ViewController: UITableViewController {
 
     ac.addAction(submitAction)
     present(ac, animated: true)
+  }
+
+  @objc func clearItemsList() {
+    items.removeAll()
+    tableView.reloadData()
   }
 }
 
