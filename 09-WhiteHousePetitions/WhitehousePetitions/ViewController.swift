@@ -24,14 +24,16 @@ class ViewController: UITableViewController {
       urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
     }
 
-    if let url = URL(string: urlString) {
-      if let data = try? Data(contentsOf: url) {
-        parse(json: data)
-        return
+    DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+      if let url = URL(string: urlString) {
+        if let data = try? Data(contentsOf: url) {
+          self?.parse(json: data)
+          return
+        }
       }
-    }
 
-    showError()
+      self?.showError()
+    }
   }
 
   func parse(json: Data) {
@@ -39,7 +41,10 @@ class ViewController: UITableViewController {
 
     if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
       petitions = jsonPetitions.results
-      tableView.reloadData()
+
+      DispatchQueue.main.async { [weak self] in
+        self?.tableView.reloadData()
+      }
     }
   }
 
@@ -63,7 +68,9 @@ class ViewController: UITableViewController {
   }
 
   func showError() {
-    presentAlert(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again")
+    DispatchQueue.main.async { [weak self] in
+      self?.presentAlert(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again")
+    }
   }
 
   @objc func showCredits() {
