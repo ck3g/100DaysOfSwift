@@ -68,7 +68,7 @@ class ViewController: UIViewController {
   }
 
   func addKeysToKeyboardRow(keys: [String], rowView: UIView, leadingPadding: CGFloat = 5) {
-    let buttonWidth: CGFloat = 30
+    let buttonWidth: CGFloat = ((UIScreen.main.bounds.size.width - 20) / 13).rounded()
     var leadingAnchor = rowView.leadingAnchor
     var firstButton = true
 
