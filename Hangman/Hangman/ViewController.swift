@@ -14,6 +14,7 @@ class ViewController: UIViewController {
   let keyboardRow3 = ["Z", "X", "C", "V", "B", "N", "M"]
 
   var guessWord = "HANGMAN"
+  var guessedLetters: [String] = []
   let displayWordLabel = UILabel()
 
   override func loadView() {
@@ -117,6 +118,7 @@ class ViewController: UIViewController {
 
   func startGame() {
     displayWordLabel.text = blankWord(from: guessWord)
+    guessedLetters = []
   }
 
   func blankWord(from word: String) -> String {
@@ -126,9 +128,25 @@ class ViewController: UIViewController {
   @objc func buttonTapped(_ sender: UIButton) {
     guard let letter = sender.titleLabel?.text else { return }
 
-    print("Letter \(letter)")
     sender.isEnabled = false
     sender.alpha = 0.3
+
+    if guessWord.contains(letter) {
+      guessedLetters.append(letter)
+      displayWordLabel.text = replaceGuessedLetter(letter: letter, guessedLetters: guessedLetters)
+    }
+  }
+
+  func replaceGuessedLetter(letter: String, guessedLetters: [String]) -> String {
+    var characters = Array(guessWord).map({ String($0) })
+
+    for i in 0..<characters.count {
+      if !guessedLetters.contains(where: { $0 == characters[i] }) {
+        characters[i] = "_"
+      }
+    }
+
+    return characters.joined(separator: " ")
   }
 
 }
