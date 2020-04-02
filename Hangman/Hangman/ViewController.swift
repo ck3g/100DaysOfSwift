@@ -19,22 +19,19 @@ class ViewController: UIViewController {
 
     let keyboardView = UIView()
     keyboardView.translatesAutoresizingMaskIntoConstraints = false
-    keyboardView.backgroundColor = .systemTeal
+    keyboardView.backgroundColor = .systemGray6
     view.addSubview(keyboardView)
 
     let keyboardRow1View = UIView()
     keyboardRow1View.translatesAutoresizingMaskIntoConstraints = false
-    keyboardRow1View.backgroundColor = .systemPink
     keyboardView.addSubview(keyboardRow1View)
 
     let keyboardRow2View = UIView()
     keyboardRow2View.translatesAutoresizingMaskIntoConstraints = false
-    keyboardRow2View.backgroundColor = .systemPink
     keyboardView.addSubview(keyboardRow2View)
 
     let keyboardRow3View = UIView()
     keyboardRow3View.translatesAutoresizingMaskIntoConstraints = false
-    keyboardRow3View.backgroundColor = .systemPink
     keyboardView.addSubview(keyboardRow3View)
 
     let keyboardPadding: CGFloat = 5
