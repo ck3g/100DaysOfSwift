@@ -14,12 +14,11 @@ class ViewController: UIViewController {
   let keyboardRow3 = ["Z", "X", "C", "V", "B", "N", "M"]
 
   var guessWord = "HANGMAN"
+  let displayWordLabel = UILabel()
 
   override func loadView() {
     view = UIView()
     view.backgroundColor = .white
-
-    let displayWordLabel = UILabel()
     displayWordLabel.translatesAutoresizingMaskIntoConstraints = false
     displayWordLabel.textAlignment = .center
     displayWordLabel.font = UIFont.systemFont(ofSize: 70)
@@ -113,6 +112,15 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
 
+    startGame()
+  }
+
+  func startGame() {
+    displayWordLabel.text = blankWord(from: guessWord)
+  }
+
+  func blankWord(from word: String) -> String {
+    Array.init(repeating: "_", count: word.utf16.count).joined(separator: " ")
   }
 
   @objc func buttonTapped(_ sender: UIButton) {
