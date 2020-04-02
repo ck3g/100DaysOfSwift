@@ -13,7 +13,7 @@ class ViewController: UIViewController {
   let keyboardRow2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"]
   let keyboardRow3 = ["Z", "X", "C", "V", "B", "N", "M"]
 
-  var guessWord = "HANGMAN"
+  var guessWord = ""
   var guessedLetters: [String] = []
   let displayWordLabel = UILabel()
 
@@ -125,11 +125,25 @@ class ViewController: UIViewController {
   }
 
   func startGame() {
-    displayWordLabel.text = blankWord(from: guessWord)
+    guessWord = pickGuessWord()
+    displayWordLabel.text = maskWord(guessWord)
     guessedLetters = []
   }
 
-  func blankWord(from word: String) -> String {
+  func pickGuessWord() -> String {
+    if let wordsFileURL = Bundle.main.url(forResource: "words", withExtension: "txt") {
+      if let wordsContents = try? String(contentsOf: wordsFileURL) {
+        var words = wordsContents.components(separatedBy: "\n")
+        words.shuffle()
+
+        return words[0]
+      }
+    }
+
+    return "HANGMAN"
+  }
+
+  func maskWord(_ word: String) -> String {
     Array.init(repeating: "_", count: word.utf16.count).joined(separator: " ")
   }
 
