@@ -20,6 +20,47 @@ class ViewController: UIViewController {
   override func loadView() {
     view = UIView()
     view.backgroundColor = .white
+
+    configureDisplayWordLabel()
+    configureKeyBoardView()
+  }
+
+  func addKeysToKeyboardRow(keys: [String], rowView: UIView, leadingPadding: CGFloat = 5) {
+    let buttonWidth: CGFloat = ((UIScreen.main.bounds.size.width - 20) / 13).rounded()
+    var leadingAnchor = rowView.leadingAnchor
+    var firstButton = true
+
+    for button in keys {
+      let keyButton = UIButton(type: .system)
+      keyButton.translatesAutoresizingMaskIntoConstraints = false
+      keyButton.setTitle(button, for: .normal)
+      keyButton.backgroundColor = .systemGray3
+      keyButton.setTitleColor(.white, for: .normal)
+      keyButton.layer.cornerRadius = 5
+      keyButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+
+      rowView.addSubview(keyButton)
+
+      NSLayoutConstraint.activate([
+        keyButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: firstButton ? leadingPadding : 5),
+        keyButton.topAnchor.constraint(equalTo: rowView.topAnchor, constant: 5),
+        keyButton.bottomAnchor.constraint(equalTo: rowView.bottomAnchor, constant: -5),
+        keyButton.widthAnchor.constraint(equalToConstant: buttonWidth)
+      ])
+
+      firstButton = false
+      leadingAnchor = keyButton.trailingAnchor
+    }
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view.
+
+    startGame()
+  }
+
+  func configureDisplayWordLabel() {
     displayWordLabel.translatesAutoresizingMaskIntoConstraints = false
     displayWordLabel.textAlignment = .center
     displayWordLabel.font = UIFont.systemFont(ofSize: 70)
@@ -33,7 +74,9 @@ class ViewController: UIViewController {
       displayWordLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor, constant: -10),
       displayWordLabel.heightAnchor.constraint(equalToConstant: 100)
     ])
+  }
 
+  func configureKeyBoardView() {
     let keyboardView = UIView()
     keyboardView.translatesAutoresizingMaskIntoConstraints = false
     keyboardView.backgroundColor = .systemGray6
@@ -79,41 +122,6 @@ class ViewController: UIViewController {
     addKeysToKeyboardRow(keys: keyboardRow1, rowView: keyboardRow1View, leadingPadding: 5)
     addKeysToKeyboardRow(keys: keyboardRow2, rowView: keyboardRow2View, leadingPadding: 22)
     addKeysToKeyboardRow(keys: keyboardRow3, rowView: keyboardRow3View, leadingPadding: 56)
-  }
-
-  func addKeysToKeyboardRow(keys: [String], rowView: UIView, leadingPadding: CGFloat = 5) {
-    let buttonWidth: CGFloat = ((UIScreen.main.bounds.size.width - 20) / 13).rounded()
-    var leadingAnchor = rowView.leadingAnchor
-    var firstButton = true
-
-    for button in keys {
-      let keyButton = UIButton(type: .system)
-      keyButton.translatesAutoresizingMaskIntoConstraints = false
-      keyButton.setTitle(button, for: .normal)
-      keyButton.backgroundColor = .systemGray3
-      keyButton.setTitleColor(.white, for: .normal)
-      keyButton.layer.cornerRadius = 5
-      keyButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-
-      rowView.addSubview(keyButton)
-
-      NSLayoutConstraint.activate([
-        keyButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: firstButton ? leadingPadding : 5),
-        keyButton.topAnchor.constraint(equalTo: rowView.topAnchor, constant: 5),
-        keyButton.bottomAnchor.constraint(equalTo: rowView.bottomAnchor, constant: -5),
-        keyButton.widthAnchor.constraint(equalToConstant: buttonWidth)
-      ])
-
-      firstButton = false
-      leadingAnchor = keyButton.trailingAnchor
-    }
-  }
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view.
-
-    startGame()
   }
 
   func startGame() {
