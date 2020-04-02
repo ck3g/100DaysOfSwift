@@ -75,6 +75,7 @@ class ViewController: UIViewController {
       keyButton.setTitle(button, for: .normal)
       keyButton.backgroundColor = .systemGray3
       keyButton.setTitleColor(.white, for: .normal)
+      keyButton.layer.cornerRadius = 5
 
       rowView.addSubview(keyButton)
 
