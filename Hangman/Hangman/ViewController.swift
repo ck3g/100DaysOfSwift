@@ -76,6 +76,7 @@ class ViewController: UIViewController {
       keyButton.backgroundColor = .systemGray3
       keyButton.setTitleColor(.white, for: .normal)
       keyButton.layer.cornerRadius = 5
+      keyButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
 
       rowView.addSubview(keyButton)
 
@@ -97,6 +98,13 @@ class ViewController: UIViewController {
 
   }
 
+  @objc func buttonTapped(_ sender: UIButton) {
+    guard let letter = sender.titleLabel?.text else { return }
+
+    print("Letter \(letter)")
+    sender.isEnabled = false
+    sender.alpha = 0.3
+  }
 
 }
 
