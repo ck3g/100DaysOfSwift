@@ -13,9 +13,26 @@ class ViewController: UIViewController {
   let keyboardRow2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"]
   let keyboardRow3 = ["Z", "X", "C", "V", "B", "N", "M"]
 
+  var guessWord = "HANGMAN"
+
   override func loadView() {
     view = UIView()
     view.backgroundColor = .white
+
+    let displayWordLabel = UILabel()
+    displayWordLabel.translatesAutoresizingMaskIntoConstraints = false
+    displayWordLabel.textAlignment = .center
+    displayWordLabel.font = UIFont.systemFont(ofSize: 70)
+    displayWordLabel.adjustsFontSizeToFitWidth = true
+    displayWordLabel.text = guessWord
+    view.addSubview(displayWordLabel)
+
+    NSLayoutConstraint.activate([
+      displayWordLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 150),
+      displayWordLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor, constant: 10),
+      displayWordLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor, constant: -10),
+      displayWordLabel.heightAnchor.constraint(equalToConstant: 100)
+    ])
 
     let keyboardView = UIView()
     keyboardView.translatesAutoresizingMaskIntoConstraints = false
