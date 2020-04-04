@@ -20,6 +20,7 @@
 		3451C15D24387E8600E6CC27 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 3451C15C24387E8600E6CC27 /* ApolloWebSocket */; };
 		3451C15F24387E8600E6CC27 /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 3451C15E24387E8600E6CC27 /* ApolloCodegenLib */; };
 		3451C168243883FA00E6CC27 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451C167243883FA00E6CC27 /* API.swift */; };
+		3451C16A243884D000E6CC27 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451C169243884D000E6CC27 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		3451C161243880D300E6CC27 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		3451C1662438821000E6CC27 /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
 		3451C167243883FA00E6CC27 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3451C169243884D000E6CC27 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				3451C13724387D5900E6CC27 /* Info.plist */,
 				3451C161243880D300E6CC27 /* schema.json */,
 				3451C1662438821000E6CC27 /* LaunchList.graphql */,
+				3451C169243884D000E6CC27 /* Network.swift */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			files = (
 				3451C12824387D5800E6CC27 /* AppDelegate.swift in Sources */,
 				3451C12A24387D5800E6CC27 /* SceneDelegate.swift in Sources */,
+				3451C16A243884D000E6CC27 /* Network.swift in Sources */,
 				3451C12C24387D5800E6CC27 /* MasterViewController.swift in Sources */,
 				3451C12E24387D5800E6CC27 /* DetailViewController.swift in Sources */,
 				3451C168243883FA00E6CC27 /* API.swift in Sources */,
