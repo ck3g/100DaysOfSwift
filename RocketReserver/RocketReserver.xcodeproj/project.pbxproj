@@ -19,6 +19,7 @@
 		3451C15B24387E8600E6CC27 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 3451C15A24387E8600E6CC27 /* Apollo */; };
 		3451C15D24387E8600E6CC27 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 3451C15C24387E8600E6CC27 /* ApolloWebSocket */; };
 		3451C15F24387E8600E6CC27 /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 3451C15E24387E8600E6CC27 /* ApolloCodegenLib */; };
+		3451C168243883FA00E6CC27 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451C167243883FA00E6CC27 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		3451C14B24387D5900E6CC27 /* RocketReserverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketReserverUITests.swift; sourceTree = "<group>"; };
 		3451C14D24387D5900E6CC27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3451C161243880D300E6CC27 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		3451C1662438821000E6CC27 /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
+		3451C167243883FA00E6CC27 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,7 @@
 		3451C12624387D5800E6CC27 /* RocketReserver */ = {
 			isa = PBXGroup;
 			children = (
+				3451C167243883FA00E6CC27 /* API.swift */,
 				3451C12724387D5800E6CC27 /* AppDelegate.swift */,
 				3451C12924387D5800E6CC27 /* SceneDelegate.swift */,
 				3451C12B24387D5800E6CC27 /* MasterViewController.swift */,
@@ -117,6 +121,7 @@
 				3451C13424387D5900E6CC27 /* LaunchScreen.storyboard */,
 				3451C13724387D5900E6CC27 /* Info.plist */,
 				3451C161243880D300E6CC27 /* schema.json */,
+				3451C1662438821000E6CC27 /* LaunchList.graphql */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -291,7 +296,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n# \"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://apollo-fullstack-tutorial.herokuapp.com/\"\n";
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n# \"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://apollo-fullstack-tutorial.herokuapp.com/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -304,6 +309,7 @@
 				3451C12A24387D5800E6CC27 /* SceneDelegate.swift in Sources */,
 				3451C12C24387D5800E6CC27 /* MasterViewController.swift in Sources */,
 				3451C12E24387D5800E6CC27 /* DetailViewController.swift in Sources */,
+				3451C168243883FA00E6CC27 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
