@@ -73,6 +73,9 @@ class MasterViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    cell.imageView?.image = nil
+    cell.textLabel?.text = nil
+    cell.detailTextLabel?.text = nil
 
     guard let listSection = ListSection(rawValue: indexPath.section) else {
       assertionFailure("Invalid section")
@@ -82,7 +85,16 @@ class MasterViewController: UITableViewController {
     switch listSection {
     case .launches:
       let launch = self.launches[indexPath.row]
-      cell.textLabel?.text = launch.site
+      cell.textLabel?.text = launch.mission?.name
+      cell.detailTextLabel?.text = launch.site
+
+      let placeholder = UIImage(named: "placeholder")!
+
+      if let missionPatch = launch.mission?.missionPatch {
+        cell.imageView?.sd_setImage(with: URL(string: missionPatch)!, placeholderImage: placeholder)
+      } else {
+        cell.imageView?.image = placeholder
+      }
     }
 
     return cell
