@@ -8,20 +8,24 @@
 
 import UIKit
 import SDWebImage
+import Apollo
 
 class MasterViewController: UITableViewController {
 
   var detailViewController: DetailViewController? = nil
   var launches = [LaunchListQuery.Data.Launch.Launch]()
+  private var lastConnection: LaunchListQuery.Data.Launch?
+  private var activeRequest: Cancellable?
 
   enum ListSection: Int, CaseIterable {
     case launches
+    case loading
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    self.loadLaunches()
+    self.loadMoreLaunchesIfTheyExist()
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +54,36 @@ class MasterViewController: UITableViewController {
       let launch = self.launches[selectedIndexPath.row]
       detail.launchID = launch.id
       self.detailViewController = detail
+
+    case .loading:
+      assertionFailure("Shouldn't have gotten here!")
+    }
+  }
+
+  override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    guard let selectedIndexPath = self.tableView.indexPathForSelectedRow else {
+      return false
+    }
+
+    guard let listSection = ListSection(rawValue: selectedIndexPath.section) else {
+      assertionFailure("Invalid section")
+      return false
+    }
+
+    switch listSection {
+    case .launches:
+      return true
+    case .loading:
+      self.tableView.deselectRow(at: selectedIndexPath, animated: true)
+
+      if self.activeRequest == nil {
+        self.loadMoreLaunchesIfTheyExist()
+      } // else, let the active request finish loading
+
+      self.tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+
+      // In either case, don't perform the seque
+      return false
     }
   }
 
@@ -68,6 +102,12 @@ class MasterViewController: UITableViewController {
     switch listSection {
     case .launches:
       return self.launches.count
+    case .loading:
+      if self.lastConnection?.hasMore == false {
+        return 0
+      } else {
+        return 1
+      }
     }
   }
 
@@ -95,6 +135,13 @@ class MasterViewController: UITableViewController {
       } else {
         cell.imageView?.image = placeholder
       }
+
+    case .loading:
+      if self.activeRequest == nil {
+        cell.textLabel?.text = "Tap to load more"
+      } else {
+        cell.textLabel?.text = "Loading..."
+      }
     }
 
     return cell
@@ -106,10 +153,11 @@ class MasterViewController: UITableViewController {
     self.present(alert, animated: true)
   }
 
-  private func loadLaunches() {
-    Network.shared.apollo.fetch(query: LaunchListQuery()) { [weak self] result in
+  private func loadMoreLaunches(from cursor: String?) {
+    self.activeRequest = Network.shared.apollo.fetch(query: LaunchListQuery(cursor: cursor)) { [weak self] result in
       guard let self = self else { return }
 
+      self.activeRequest = nil
       defer { self.tableView.reloadData() }
 
       switch result {
@@ -117,6 +165,7 @@ class MasterViewController: UITableViewController {
         print("Success Result: \(graphQLResult)")
         
         if let launchConnection = graphQLResult.data?.launches {
+          self.lastConnection = launchConnection
           self.launches.append(contentsOf: launchConnection.launches.compactMap { $0 })
         }
 
@@ -128,6 +177,21 @@ class MasterViewController: UITableViewController {
         self.showErrorAlert(title: "Network Error", message: error.localizedDescription)
       }
     }
+  }
+
+  private func loadMoreLaunchesIfTheyExist() {
+    guard let connection = self.lastConnection else {
+      // We don't have stored launch details, load from scratch
+      self.loadMoreLaunches(from: nil)
+      return
+    }
+
+    guard connection.hasMore else {
+      // No more launches to fetch
+      return
+    }
+
+    self.loadMoreLaunches(from: connection.cursor)
   }
 
 }
