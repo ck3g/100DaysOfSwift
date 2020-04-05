@@ -21,6 +21,7 @@
 		3451C15F24387E8600E6CC27 /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 3451C15E24387E8600E6CC27 /* ApolloCodegenLib */; };
 		3451C168243883FA00E6CC27 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451C167243883FA00E6CC27 /* API.swift */; };
 		3451C16A243884D000E6CC27 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451C169243884D000E6CC27 /* Network.swift */; };
+		3451C16D2439B0DD00E6CC27 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3451C16C2439B0DD00E6CC27 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 			files = (
 				3451C15B24387E8600E6CC27 /* Apollo in Frameworks */,
 				3451C15F24387E8600E6CC27 /* ApolloCodegenLib in Frameworks */,
+				3451C16D2439B0DD00E6CC27 /* SDWebImage in Frameworks */,
 				3451C15D24387E8600E6CC27 /* ApolloWebSocket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +170,7 @@
 				3451C15A24387E8600E6CC27 /* Apollo */,
 				3451C15C24387E8600E6CC27 /* ApolloWebSocket */,
 				3451C15E24387E8600E6CC27 /* ApolloCodegenLib */,
+				3451C16C2439B0DD00E6CC27 /* SDWebImage */,
 			);
 			productName = RocketReserver;
 			productReference = 3451C12424387D5800E6CC27 /* RocketReserver.app */;
@@ -243,6 +246,7 @@
 			mainGroup = 3451C11B24387D5800E6CC27;
 			packageReferences = (
 				3451C15924387E8600E6CC27 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				3451C16B2439B0DD00E6CC27 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 3451C12524387D5800E6CC27 /* Products */;
 			projectDirPath = "";
@@ -652,6 +656,14 @@
 				minimumVersion = 0.25.0;
 			};
 		};
+		3451C16B2439B0DD00E6CC27 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -669,6 +681,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3451C15924387E8600E6CC27 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloCodegenLib;
+		};
+		3451C16C2439B0DD00E6CC27 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3451C16B2439B0DD00E6CC27 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
