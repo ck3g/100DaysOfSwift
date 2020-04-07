@@ -80,7 +80,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
-                        <barButtonItem key="rightBarButtonItem" title="Book Now!" id="zbJ-ZT-zue"/>
+                        <barButtonItem key="rightBarButtonItem" title="Book Now!" id="zbJ-ZT-zue">
+                            <connections>
+                                <action selector="bookOrCancelTapped" destination="JEX-9P-axG" id="ZCW-OY-WWc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bookCancelButton" destination="zbJ-ZT-zue" id="Pv9-Ds-IVx"/>
@@ -88,7 +92,7 @@
                         <outlet property="missionNameLabel" destination="dru-pX-Vdt" id="gRF-Jn-cCz"/>
                         <outlet property="missionPatchImageView" destination="29M-E8-5AB" id="oBb-RV-4Se"/>
                         <outlet property="rocketNameLabel" destination="JmB-mf-LVI" id="XQq-UX-GMJ"/>
-                        <segue destination="XXl-Lk-waT" kind="presentation" id="XKb-K3-Prc"/>
+                        <segue destination="XXl-Lk-waT" kind="presentation" identifier="showLogin" id="XKb-K3-Prc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -104,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YXI-m1-aNO">
-                                <rect key="frame" x="20" y="96" width="374" height="287"/>
+                                <rect key="frame" x="20" y="96" width="374" height="149.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFb-Xa-joh">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="41"/>
@@ -112,19 +116,19 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1N-kh-oDu">
-                                        <rect key="frame" x="0.0" y="49" width="374" height="171.5"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1N-kh-oDu">
+                                        <rect key="frame" x="0.0" y="49" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Errors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYd-L2-DIr">
-                                        <rect key="frame" x="0.0" y="228.5" width="374" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Errors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYd-L2-DIr">
+                                        <rect key="frame" x="0.0" y="91" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLX-Lp-svU">
-                                        <rect key="frame" x="0.0" y="257" width="374" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLX-Lp-svU">
+                                        <rect key="frame" x="0.0" y="119.5" width="374" height="30"/>
                                         <state key="normal" title="Submit"/>
                                         <connections>
                                             <action selector="submitTapped" destination="PyW-uf-sKK" eventType="touchUpInside" id="NQe-vI-eKc"/>
@@ -137,7 +141,7 @@
                         <constraints>
                             <constraint firstItem="YXI-m1-aNO" firstAttribute="top" secondItem="rhl-Uh-6rK" secondAttribute="top" constant="40" id="9yV-HV-Wlj"/>
                             <constraint firstItem="YXI-m1-aNO" firstAttribute="leading" secondItem="rhl-Uh-6rK" secondAttribute="leading" constant="20" id="XUc-Ga-CGt"/>
-                            <constraint firstItem="rhl-Uh-6rK" firstAttribute="bottom" secondItem="YXI-m1-aNO" secondAttribute="bottom" constant="425" id="ugd-m0-1Wz"/>
+                            <constraint firstItem="rhl-Uh-6rK" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YXI-m1-aNO" secondAttribute="bottom" constant="425" id="ugd-m0-1Wz"/>
                             <constraint firstItem="rhl-Uh-6rK" firstAttribute="trailing" secondItem="YXI-m1-aNO" secondAttribute="trailing" constant="20" id="xw0-5Y-8CW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rhl-Uh-6rK"/>
@@ -152,7 +156,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="q1N-kh-oDu" id="8wD-B8-iWV"/>
                         <outlet property="errorLabel" destination="rYd-L2-DIr" id="bK0-Vg-HOK"/>
-                        <outlet property="sumbitButton" destination="KLX-Lp-svU" id="8jp-Yr-BGL"/>
+                        <outlet property="submitButton" destination="KLX-Lp-svU" id="44m-tz-T7b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="keh-PM-NxB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
