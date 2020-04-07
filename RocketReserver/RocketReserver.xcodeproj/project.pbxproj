@@ -24,6 +24,7 @@
 		3451C16D2439B0DD00E6CC27 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3451C16C2439B0DD00E6CC27 /* SDWebImage */; };
 		3451C16F243A33AE00E6CC27 /* LaunchDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3451C16E243A33AE00E6CC27 /* LaunchDetails.graphql */; };
 		3451C171243B223D00E6CC27 /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3451C170243B223D00E6CC27 /* Login.graphql */; };
+		3451C173243C683C00E6CC27 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451C172243C683C00E6CC27 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		3451C169243884D000E6CC27 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		3451C16E243A33AE00E6CC27 /* LaunchDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchDetails.graphql; sourceTree = "<group>"; };
 		3451C170243B223D00E6CC27 /* Login.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
+		3451C172243C683C00E6CC27 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				3451C169243884D000E6CC27 /* Network.swift */,
 				3451C16E243A33AE00E6CC27 /* LaunchDetails.graphql */,
 				3451C170243B223D00E6CC27 /* Login.graphql */,
+				3451C172243C683C00E6CC27 /* LoginViewController.swift */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3451C173243C683C00E6CC27 /* LoginViewController.swift in Sources */,
 				3451C12824387D5800E6CC27 /* AppDelegate.swift in Sources */,
 				3451C12A24387D5800E6CC27 /* SceneDelegate.swift in Sources */,
 				3451C16A243884D000E6CC27 /* Network.swift in Sources */,

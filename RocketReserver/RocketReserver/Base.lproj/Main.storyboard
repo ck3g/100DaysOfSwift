@@ -88,11 +88,76 @@
                         <outlet property="missionNameLabel" destination="dru-pX-Vdt" id="gRF-Jn-cCz"/>
                         <outlet property="missionPatchImageView" destination="29M-E8-5AB" id="oBb-RV-4Se"/>
                         <outlet property="rocketNameLabel" destination="JmB-mf-LVI" id="XQq-UX-GMJ"/>
+                        <segue destination="XXl-Lk-waT" kind="presentation" id="XKb-K3-Prc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708.69565217391312" y="128.57142857142856"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="dhL-wl-TXO">
+            <objects>
+                <viewController id="PyW-uf-sKK" customClass="LoginViewController" customModule="RocketReserver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IdX-jQ-M2h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YXI-m1-aNO">
+                                <rect key="frame" x="20" y="96" width="374" height="287"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFb-Xa-joh">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1N-kh-oDu">
+                                        <rect key="frame" x="0.0" y="49" width="374" height="171.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Errors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYd-L2-DIr">
+                                        <rect key="frame" x="0.0" y="228.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLX-Lp-svU">
+                                        <rect key="frame" x="0.0" y="257" width="374" height="30"/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitTapped" destination="PyW-uf-sKK" eventType="touchUpInside" id="NQe-vI-eKc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YXI-m1-aNO" firstAttribute="top" secondItem="rhl-Uh-6rK" secondAttribute="top" constant="40" id="9yV-HV-Wlj"/>
+                            <constraint firstItem="YXI-m1-aNO" firstAttribute="leading" secondItem="rhl-Uh-6rK" secondAttribute="leading" constant="20" id="XUc-Ga-CGt"/>
+                            <constraint firstItem="rhl-Uh-6rK" firstAttribute="bottom" secondItem="YXI-m1-aNO" secondAttribute="bottom" constant="425" id="ugd-m0-1Wz"/>
+                            <constraint firstItem="rhl-Uh-6rK" firstAttribute="trailing" secondItem="YXI-m1-aNO" secondAttribute="trailing" constant="20" id="xw0-5Y-8CW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rhl-Uh-6rK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QXE-n8-D27">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Xhe-iO-r04">
+                            <connections>
+                                <action selector="cancelTapped" destination="PyW-uf-sKK" id="QLf-Hd-BON"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="q1N-kh-oDu" id="8wD-B8-iWV"/>
+                        <outlet property="errorLabel" destination="rYd-L2-DIr" id="bK0-Vg-HOK"/>
+                        <outlet property="sumbitButton" destination="KLX-Lp-svU" id="8jp-Yr-BGL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="keh-PM-NxB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2391.304347826087" y="135.9375"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -172,6 +237,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-45" y="129"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="J1s-an-ad0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XXl-Lk-waT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IZy-2f-Azg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PyW-uf-sKK" kind="relationship" relationship="rootViewController" id="W9t-g9-1QN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mRR-DR-iVy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481.1594202898552" y="135.9375"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
