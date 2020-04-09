@@ -43,9 +43,9 @@ class DetailViewController: UIViewController {
     }
 
     if launch.isBooked {
-      print("Cancel trip!")
+      self.cancelTrip(with: launch.id)
     } else {
-      print("Book trip!")
+      self.bookTrip(with: launch.id)
     }
   }
 
@@ -121,6 +121,33 @@ class DetailViewController: UIViewController {
   private func isLoggedIn() -> Bool {
     let keychain = KeychainSwift()
     return keychain.get(LoginViewController.loginKeychainKey) != nil
+  }
+
+  private func bookTrip(with id: GraphQLID) {
+    Network.shared.apollo.perform(mutation: BookTripMutation(id: id)) { [weak self] result in
+      guard let self = self else { return }
+
+      switch result {
+      case .success(let graphQLResult):
+        if let bookingResult = graphQLResult.data?.bookTrips {
+          if bookingResult.success {
+            self.showAlert(title: "Success", message: bookingResult.message ?? "Trip booked successfully")
+          } else {
+            self.showAlert(title: "Could not book trip", message: bookingResult.message ?? "Unknown failure")
+          }
+        }
+
+        if let errors = graphQLResult.errors {
+          self.showAlertForErrors(errors)
+        }
+      case .failure(let error):
+        self.showAlert(title: "Network Error", message: error.localizedDescription)
+      }
+    }
+  }
+
+  private func cancelTrip(with id: GraphQLID) {
+    print("Cancel trip \(id)")
   }
 
 }
