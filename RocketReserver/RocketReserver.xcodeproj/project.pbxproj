@@ -28,6 +28,7 @@
 		3451C176243C6F1200E6CC27 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3451C175243C6F1200E6CC27 /* KeychainSwift */; };
 		3451C178243F153500E6CC27 /* BookTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3451C177243F153500E6CC27 /* BookTrip.graphql */; };
 		3451C17A243F1A5400E6CC27 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451C179243F1A5400E6CC27 /* UIViewController+Alert.swift */; };
+		3451C17C2440416C00E6CC27 /* CancelTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3451C17B2440416C00E6CC27 /* CancelTrip.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		3451C172243C683C00E6CC27 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3451C177243F153500E6CC27 /* BookTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BookTrip.graphql; sourceTree = "<group>"; };
 		3451C179243F1A5400E6CC27 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		3451C17B2440416C00E6CC27 /* CancelTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CancelTrip.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				3451C172243C683C00E6CC27 /* LoginViewController.swift */,
 				3451C177243F153500E6CC27 /* BookTrip.graphql */,
 				3451C179243F1A5400E6CC27 /* UIViewController+Alert.swift */,
+				3451C17B2440416C00E6CC27 /* CancelTrip.graphql */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				3451C13624387D5900E6CC27 /* LaunchScreen.storyboard in Resources */,
 				3451C178243F153500E6CC27 /* BookTrip.graphql in Resources */,
 				3451C13324387D5900E6CC27 /* Assets.xcassets in Resources */,
+				3451C17C2440416C00E6CC27 /* CancelTrip.graphql in Resources */,
 				3451C171243B223D00E6CC27 /* Login.graphql in Resources */,
 				3451C13124387D5800E6CC27 /* Main.storyboard in Resources */,
 				3451C16F243A33AE00E6CC27 /* LaunchDetails.graphql in Resources */,
