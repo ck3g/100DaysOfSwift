@@ -147,7 +147,27 @@ class DetailViewController: UIViewController {
   }
 
   private func cancelTrip(with id: GraphQLID) {
-    print("Cancel trip \(id)")
+    Network.shared.apollo.perform(mutation: CancelTripMutation(id: id)) { [weak self] result in
+      guard let self = self else { return }
+
+      switch result {
+      case .success(let graphQLResult):
+        if let cancelResult = graphQLResult.data?.cancelTrip {
+          if cancelResult.success {
+            self.showAlert(title: "Trip cancelled", message: cancelResult.message ?? "Your trip has been officially cancelled.")
+          } else {
+            self.showAlert(title: "Could not cancel trip", message: cancelResult.message ?? "Unknown failure.")
+          }
+        }
+
+        if let errors = graphQLResult.errors {
+          self.showAlertForErrors(errors)
+        }
+
+      case .failure(let error):
+        self.showAlert(title: "Network Error", message: error.localizedDescription)
+      }
+    }
   }
 
 }
