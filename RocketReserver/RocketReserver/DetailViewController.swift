@@ -94,10 +94,18 @@ class DetailViewController: UIViewController {
     configureView()
   }
 
-  private func loadLaunchDetails() {
-    guard let launchID = self.launchID, launchID != self.launch?.id else {
+  private func loadLaunchDetails(forceReload: Bool = false) {
+    guard let launchID = self.launchID, (forceReload || launchID != self.launch?.id) else {
       // This is the launch we're already displaying, or the ID is nil.
       return
+    }
+
+    let cachePolicy: CachePolicy
+
+    if forceReload {
+      cachePolicy = .fetchIgnoringCacheCompletely
+    } else {
+      cachePolicy = .returnCacheDataElseFetch
     }
 
     Network.shared.apollo.fetch(query: LaunchDetailsQuery(id: launchID)) { [weak self] result in
@@ -131,6 +139,7 @@ class DetailViewController: UIViewController {
       case .success(let graphQLResult):
         if let bookingResult = graphQLResult.data?.bookTrips {
           if bookingResult.success {
+            self.loadLaunchDetails(forceReload: true)
             self.showAlert(title: "Success", message: bookingResult.message ?? "Trip booked successfully")
           } else {
             self.showAlert(title: "Could not book trip", message: bookingResult.message ?? "Unknown failure")
@@ -154,6 +163,7 @@ class DetailViewController: UIViewController {
       case .success(let graphQLResult):
         if let cancelResult = graphQLResult.data?.cancelTrip {
           if cancelResult.success {
+            self.loadLaunchDetails(forceReload: true)
             self.showAlert(title: "Trip cancelled", message: cancelResult.message ?? "Your trip has been officially cancelled.")
           } else {
             self.showAlert(title: "Could not cancel trip", message: cancelResult.message ?? "Unknown failure.")
