@@ -20,16 +20,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
     physicsWorld.contactDelegate = self
 
+
+    makeSlot(at: CGPoint(x: 128, y: 0), isGood: true)
+    makeSlot(at: CGPoint(x: 384, y: 0), isGood: false)
+    makeSlot(at: CGPoint(x: 640, y: 0), isGood: true)
+    makeSlot(at: CGPoint(x: 896, y: 0), isGood: false)
+
     makeBouncer(at: CGPoint(x: 0, y: 0))
     makeBouncer(at: CGPoint(x: 256, y: 0))
     makeBouncer(at: CGPoint(x: 512, y: 0))
     makeBouncer(at: CGPoint(x: 768, y: 0))
     makeBouncer(at: CGPoint(x: 1024, y: 0))
 
-    makeSlot(at: CGPoint(x: 128, y: 0), isGood: true)
-    makeSlot(at: CGPoint(x: 384, y: 0), isGood: false)
-    makeSlot(at: CGPoint(x: 640, y: 0), isGood: true)
-    makeSlot(at: CGPoint(x: 896, y: 0), isGood: false)
   }
 
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
