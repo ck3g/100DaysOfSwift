@@ -24,10 +24,11 @@ class GameScene: SKScene {
     guard let touch = touches.first else { return }
     let location = touch.location(in: self)
 
-    let box = SKSpriteNode(color: .red, size: CGSize(width: 64, height: 64))
-    box.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 64, height: 64))
-    box.position = location
-    addChild(box)
+    let ball = SKSpriteNode(imageNamed: "ballRed")
+    ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
+    ball.physicsBody?.restitution = 0.4
+    ball.position = location
+    addChild(ball)
   }
   
 }
