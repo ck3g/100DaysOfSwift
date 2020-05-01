@@ -9,6 +9,13 @@
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+  var scoreLabel: SKLabelNode!
+
+  var score = 0 {
+    didSet {
+      scoreLabel.text = "Score: \(score)"
+    }
+  }
   
   override func didMove(to view: SKView) {
     let background = SKSpriteNode(imageNamed: "background")
@@ -16,6 +23,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     background.blendMode = .replace // renders faster
     background.zPosition = -1
     addChild(background)
+
+    scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+    scoreLabel.text = "Score: 0"
+    scoreLabel.horizontalAlignmentMode = .right
+    scoreLabel.position = CGPoint(x: 980, y: 700)
+    addChild(scoreLabel)
 
     physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
     physicsWorld.contactDelegate = self
