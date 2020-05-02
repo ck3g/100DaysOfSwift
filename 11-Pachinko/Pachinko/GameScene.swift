@@ -68,13 +68,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     guard let touch = touches.first else { return }
     let location = touch.location(in: self)
 
-    let ball = SKSpriteNode(imageNamed: "ballRed")
-    ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
-    ball.physicsBody?.restitution = 0.4
-    ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
-    ball.position = location
-    ball.name = "ball"
-    addChild(ball)
+    let objects = nodes(at: location)
+
+    if objects.contains(editLabel) {
+      editingMode.toggle()
+    } else {
+      let ball = SKSpriteNode(imageNamed: "ballRed")
+      ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
+      ball.physicsBody?.restitution = 0.4
+      ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
+      ball.position = location
+      ball.name = "ball"
+      addChild(ball)
+    }
   }
 
   func makeBouncer(at position: CGPoint) {
