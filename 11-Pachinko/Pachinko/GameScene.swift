@@ -155,6 +155,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     if object.name == "good" {
       destroy(ball: ball)
       score += 1
+      ballsLeft += 1
     } else if object.name == "bad" {
       destroy(ball: ball)
       score -= 1
