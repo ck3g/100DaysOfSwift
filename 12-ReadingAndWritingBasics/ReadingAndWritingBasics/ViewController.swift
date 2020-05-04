@@ -26,6 +26,24 @@ class ViewController: UIViewController {
 
     let dict = ["Name": "Vitali", "Country": "Germany"]
     defaults.set(dict, forKey: "SavedDictionary")
+
+    // Retrieving data
+    let age             = defaults.integer(forKey: "Age")
+    let userFaceID      = defaults.bool(forKey: "UserFaceID")
+    let pi              = defaults.float(forKey: "Pi")
+    let name            = defaults.string(forKey: "name")
+
+    let lastRun         = defaults.object(forKey: "lastRun") as? Date ?? Date()
+    let savedArray      = defaults.object(forKey: "SavedArray") as? [String] ?? [String]()
+    let savedDictionary = defaults.object(forKey: "SavedDictionary") as? [String: String] ?? [String: String]()
+
+    print("Age", age)
+    print("UserFaceID", userFaceID)
+    print("Pi", pi)
+    print("Name", name)
+    print("Last run", lastRun)
+    print("Saved Array", savedArray)
+    print("Saved Dictionary", savedDictionary)
   }
 
 
