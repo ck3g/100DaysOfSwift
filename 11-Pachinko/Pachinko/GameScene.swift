@@ -28,6 +28,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         editLabel.text = "Done"
       } else {
         editLabel.text = "Edit"
+        score = 0
       }
     }
   }
