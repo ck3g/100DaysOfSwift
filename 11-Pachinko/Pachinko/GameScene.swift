@@ -94,6 +94,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
     box.physicsBody?.isDynamic = false
+    box.name = "obstacle"
     addChild(box)
   }
 
@@ -150,6 +151,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     } else if object.name == "bad" {
       destroy(ball: ball)
       score -= 1
+    } else if object.name == "obstacle" {
+      object.removeFromParent()
     }
   }
 
