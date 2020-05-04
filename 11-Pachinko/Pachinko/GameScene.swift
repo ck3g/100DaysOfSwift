@@ -12,7 +12,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
   let balls = ["ballBlue", "ballCyan", "ballGreen", "ballGrey", "ballPurple", "ballRed", "ballYellow"]
   let ballYStartPosition: CGFloat = 700
   let maxBalls = 5
-  var ballsLeft = 5
 
   var scoreLabel: SKLabelNode!
 
@@ -35,6 +34,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
       }
     }
   }
+
+  var ballsLabel: SKLabelNode!
+
+  var ballsLeft = 5 {
+    didSet {
+      ballsLabel.text = "Balls: \(ballsLeft)"
+    }
+  }
   
   override func didMove(to view: SKView) {
     let background = SKSpriteNode(imageNamed: "background")
@@ -48,6 +55,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     scoreLabel.horizontalAlignmentMode = .right
     scoreLabel.position = CGPoint(x: 980, y: 700)
     addChild(scoreLabel)
+
+    ballsLabel = SKLabelNode(fontNamed: "Chalkduster")
+    ballsLabel.text = "Balls: \(maxBalls)"
+    ballsLabel.horizontalAlignmentMode = .right
+    ballsLabel.position = CGPoint(x: 980, y: 660)
+    addChild(ballsLabel)
 
     editLabel = SKLabelNode(fontNamed: "Chalkduster")
     editLabel.text = "Edit"
