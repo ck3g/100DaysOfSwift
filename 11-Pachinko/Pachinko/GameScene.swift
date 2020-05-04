@@ -10,6 +10,8 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
   let balls = ["ballBlue", "ballCyan", "ballGreen", "ballGrey", "ballPurple", "ballRed", "ballYellow"]
+  let ballYStartPosition: CGFloat = 700
+
   var scoreLabel: SKLabelNode!
 
   var score = 0 {
@@ -100,7 +102,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
     ball.physicsBody?.restitution = 0.4
     ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
-    ball.position = location
+    ball.position = CGPoint(x: location.x, y: ballYStartPosition)
     ball.name = "ball"
     addChild(ball)
   }
