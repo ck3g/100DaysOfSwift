@@ -75,26 +75,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
       editingMode.toggle()
     } else {
       if editingMode {
-        // create a box
-        let size = CGSize(width: Int.random(in: 16...128), height: 16)
-        let boxColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
-        let box = SKSpriteNode(color: boxColor, size: size)
-        box.zRotation = CGFloat.random(in: 0...3)
-        box.position = location
-
-        box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
-        box.physicsBody?.isDynamic = false
-        addChild(box)
+        makeObstacle(at: location)
       } else {
-        let ball = SKSpriteNode(imageNamed: balls.shuffled()[0])
-        ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
-        ball.physicsBody?.restitution = 0.4
-        ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
-        ball.position = location
-        ball.name = "ball"
-        addChild(ball)
+        makeBall(at: location)
       }
     }
+  }
+
+  func makeObstacle(at location: CGPoint) {
+    // create a box
+    let size = CGSize(width: Int.random(in: 16...128), height: 16)
+    let boxColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
+    let box = SKSpriteNode(color: boxColor, size: size)
+    box.zRotation = CGFloat.random(in: 0...3)
+    box.position = location
+
+    box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
+    box.physicsBody?.isDynamic = false
+    addChild(box)
+  }
+
+  func makeBall(at location: CGPoint) {
+    let ball = SKSpriteNode(imageNamed: balls.shuffled()[0])
+    ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
+    ball.physicsBody?.restitution = 0.4
+    ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
+    ball.position = location
+    ball.name = "ball"
+    addChild(ball)
   }
 
   func makeBouncer(at position: CGPoint) {
