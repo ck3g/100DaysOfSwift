@@ -11,6 +11,8 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
   let balls = ["ballBlue", "ballCyan", "ballGreen", "ballGrey", "ballPurple", "ballRed", "ballYellow"]
   let ballYStartPosition: CGFloat = 700
+  let maxBalls = 5
+  var ballsLeft = 5
 
   var scoreLabel: SKLabelNode!
 
@@ -29,6 +31,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
       } else {
         editLabel.text = "Edit"
         score = 0
+        ballsLeft = maxBalls
       }
     }
   }
@@ -80,7 +83,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
       if editingMode {
         makeObstacle(at: location)
       } else {
-        makeBall(at: location)
+        if ballsLeft > 0 {
+          makeBall(at: location)
+          ballsLeft -= 1
+        }
       }
     }
   }
