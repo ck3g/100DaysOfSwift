@@ -67,6 +67,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     let person = Person(name: "Unknown", image: imageName)
     people.append(person)
     collectionView.reloadData()
+    save()
 
     dismiss(animated: true)
   }
@@ -89,6 +90,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     ac.addAction(UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
       self?.people.removeAll(where: { $0 == person })
       self?.collectionView.reloadData()
+      self?.save()
     })
 
     ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -105,10 +107,18 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
 
       person.name = newName
       self?.collectionView.reloadData()
+      self?.save()
     })
 
     ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
 
     present(ac, animated: true)
+  }
+
+  func save() {
+    if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: people, requiringSecureCoding: false) {
+      let defaults = UserDefaults.standard
+      defaults.set(savedData, forKey: "people")
+    }
   }
 }
