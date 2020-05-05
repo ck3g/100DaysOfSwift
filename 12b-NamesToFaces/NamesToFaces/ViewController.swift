@@ -66,6 +66,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
 
     let person = Person(name: "Unknown", image: imageName)
     people.append(person)
+    save()
     collectionView.reloadData()
 
     dismiss(animated: true)
@@ -88,6 +89,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
 
     ac.addAction(UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
       self?.people.removeAll(where: { $0 == person })
+      self?.save()
       self?.collectionView.reloadData()
     })
 
@@ -104,11 +106,23 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
       guard let newName = ac?.textFields?[0].text else { return }
 
       person.name = newName
+      self?.save()
       self?.collectionView.reloadData()
     })
 
     ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
 
     present(ac, animated: true)
+  }
+
+  func save() {
+    let jsonEncoder = JSONEncoder()
+
+    if let savedData = try? jsonEncoder.encode(people) {
+      let defaults = UserDefaults.standard
+      defaults.set(savedData, forKey: "people")
+    } else {
+      print("Failed to save people.")
+    }
   }
 }
