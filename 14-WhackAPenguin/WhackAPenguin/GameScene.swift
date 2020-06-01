@@ -60,6 +60,15 @@ class GameScene: SKScene {
 
       whackSlot.hit()
 
+      if let smokeParticle = SKEmitterNode(fileNamed: "SmokeParticle") {
+        smokeParticle.position = whackSlot.position
+        addChild(smokeParticle)
+        smokeParticle.run(SKAction.fadeOut(withDuration: 2))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+          smokeParticle.removeFromParent()
+        }
+      }
+
       if node.name == "charFriend" {
         // they shouldn't have whacked this penguin
         score -= 5
