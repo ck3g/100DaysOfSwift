@@ -21,7 +21,7 @@ class WhackSlot: SKNode {
     let cropNode = SKCropNode()
     cropNode.position = CGPoint(x: 0, y: 15)
     cropNode.zPosition = 1
-    cropNode.maskNode = nil
+    cropNode.maskNode = SKSpriteNode(imageNamed: "whackMask")
 
     charNode = SKSpriteNode(imageNamed: "penguinGood")
     charNode.position = CGPoint(x: 0, y: -90)
