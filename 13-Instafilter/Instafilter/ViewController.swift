@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+  @IBOutlet var imageView: UIImageView!
+  @IBOutlet var intencity: UISlider!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -16,5 +18,13 @@ class ViewController: UIViewController {
   }
 
 
+  @IBAction func changeFilter(_ sender: Any) {
+  }
+
+  @IBAction func save(_ sender: Any) {
+  }
+
+  @IBAction func intencityChanged(_ sender: Any) {
+  }
 }
 
