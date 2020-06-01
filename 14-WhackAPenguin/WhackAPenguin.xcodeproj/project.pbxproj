@@ -16,6 +16,7 @@
 		34BA062F24851C58002FEDCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BA062D24851C58002FEDCD /* LaunchScreen.storyboard */; };
 		34BA063824851E0C002FEDCD /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = 34BA063624851E0C002FEDCD /* whack.caf */; };
 		34BA063924851E0C002FEDCD /* whackBad.caf in Resources */ = {isa = PBXBuildFile; fileRef = 34BA063724851E0C002FEDCD /* whackBad.caf */; };
+		34BA063B2485200B002FEDCD /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA063A2485200B002FEDCD /* WhackSlot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		34BA063024851C58002FEDCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34BA063624851E0C002FEDCD /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
 		34BA063724851E0C002FEDCD /* whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whackBad.caf; sourceTree = "<group>"; };
+		34BA063A2485200B002FEDCD /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				34BA062024851C56002FEDCD /* GameScene.sks */,
 				34BA062424851C56002FEDCD /* GameScene.swift */,
 				34BA062624851C56002FEDCD /* GameViewController.swift */,
+				34BA063A2485200B002FEDCD /* WhackSlot.swift */,
 				34BA062824851C56002FEDCD /* Main.storyboard */,
 				34BA062B24851C58002FEDCD /* Assets.xcassets */,
 				34BA062D24851C58002FEDCD /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 			files = (
 				34BA062524851C56002FEDCD /* GameScene.swift in Sources */,
 				34BA062724851C56002FEDCD /* GameViewController.swift in Sources */,
+				34BA063B2485200B002FEDCD /* WhackSlot.swift in Sources */,
 				34BA061F24851C56002FEDCD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
