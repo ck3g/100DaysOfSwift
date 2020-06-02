@@ -28,12 +28,15 @@ class ViewController: UIViewController {
       switch self.currentAnimation {
       case 0:
         self.imageView.transform = CGAffineTransform(scaleX: 2, y: 2)
-        break
       case 1:
         self.imageView.transform = .identity // Resets back to original size/position
       case 2:
         self.imageView.transform = CGAffineTransform(translationX: -256, y: -256)
       case 3:
+        self.imageView.transform = .identity
+      case 4:
+        self.imageView.transform = CGAffineTransform(rotationAngle: .pi)
+      case 5:
         self.imageView.transform = .identity
       default:
         break
