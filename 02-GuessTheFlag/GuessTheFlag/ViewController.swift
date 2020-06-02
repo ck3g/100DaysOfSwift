@@ -52,6 +52,15 @@ class ViewController: UIViewController {
   }
 
   @IBAction func buttonTapped(_ sender: UIButton) {
+    UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+      sender.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+    }) { _ in
+      sender.transform = .identity
+      self.nextQuestion(sender)
+    }
+  }
+
+  func nextQuestion(_ sender: UIButton) {
     questionsAnswered += 1
 
     if sender.tag == correctAnswer {
