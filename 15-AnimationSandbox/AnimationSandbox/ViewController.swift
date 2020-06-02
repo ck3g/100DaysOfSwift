@@ -29,6 +29,8 @@ class ViewController: UIViewController {
       case 0:
         self.imageView.transform = CGAffineTransform(scaleX: 2, y: 2)
         break
+      case 1:
+        self.imageView.transform = .identity
       default:
         break
       }
