@@ -13,6 +13,7 @@
 		342B6D4C24A4890000B9E6BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342B6D4A24A4890000B9E6BB /* Main.storyboard */; };
 		342B6D4E24A4890200B9E6BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342B6D4D24A4890200B9E6BB /* Assets.xcassets */; };
 		342B6D5124A4890200B9E6BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342B6D4F24A4890200B9E6BB /* LaunchScreen.storyboard */; };
+		34BA3B3D24A48C9C00585322 /* Capital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BA3B3C24A48C9C00585322 /* Capital.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		342B6D4D24A4890200B9E6BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		342B6D5024A4890200B9E6BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		342B6D5224A4890200B9E6BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34BA3B3C24A48C9C00585322 /* Capital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capital.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				342B6D4424A4890000B9E6BB /* AppDelegate.swift */,
 				342B6D4624A4890000B9E6BB /* SceneDelegate.swift */,
 				342B6D4824A4890000B9E6BB /* ViewController.swift */,
+				34BA3B3C24A48C9C00585322 /* Capital.swift */,
 				342B6D4A24A4890000B9E6BB /* Main.storyboard */,
 				342B6D4D24A4890200B9E6BB /* Assets.xcassets */,
 				342B6D4F24A4890200B9E6BB /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				342B6D4924A4890000B9E6BB /* ViewController.swift in Sources */,
 				342B6D4524A4890000B9E6BB /* AppDelegate.swift in Sources */,
+				34BA3B3D24A48C9C00585322 /* Capital.swift in Sources */,
 				342B6D4724A4890000B9E6BB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
