@@ -15,6 +15,8 @@
 		34BA3B5624A5E74A00585322 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BA3B5424A5E74A00585322 /* Main.storyboard */; };
 		34BA3B5824A5E74D00585322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BA3B5724A5E74D00585322 /* Assets.xcassets */; };
 		34BA3B5B24A5E74D00585322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BA3B5924A5E74D00585322 /* LaunchScreen.storyboard */; };
+		34BA3B6424A5E82500585322 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 34BA3B6224A5E82500585322 /* explosion.sks */; };
+		34BA3B6524A5E82500585322 /* starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = 34BA3B6324A5E82500585322 /* starfield.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		34BA3B5724A5E74D00585322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34BA3B5A24A5E74D00585322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34BA3B5C24A5E74D00585322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34BA3B6224A5E82500585322 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
+		34BA3B6324A5E82500585322 /* starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = starfield.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				34BA3B5724A5E74D00585322 /* Assets.xcassets */,
 				34BA3B5924A5E74D00585322 /* LaunchScreen.storyboard */,
 				34BA3B5C24A5E74D00585322 /* Info.plist */,
+				34BA3B6224A5E82500585322 /* explosion.sks */,
+				34BA3B6324A5E82500585322 /* starfield.sks */,
 			);
 			path = SpaceRace;
 			sourceTree = "<group>";
@@ -134,8 +140,10 @@
 				34BA3B5624A5E74A00585322 /* Main.storyboard in Resources */,
 				34BA3B4D24A5E74A00585322 /* GameScene.sks in Resources */,
 				34BA3B5824A5E74D00585322 /* Assets.xcassets in Resources */,
+				34BA3B6424A5E82500585322 /* explosion.sks in Resources */,
 				34BA3B5B24A5E74D00585322 /* LaunchScreen.storyboard in Resources */,
 				34BA3B4F24A5E74A00585322 /* Actions.sks in Resources */,
+				34BA3B6524A5E82500585322 /* starfield.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
