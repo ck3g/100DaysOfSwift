@@ -41,6 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
     scoreLabel.position = CGPoint(x: 16, y: 16)
     scoreLabel.horizontalAlignmentMode = .left
+    addChild(scoreLabel)
 
     score = 0
 
@@ -67,5 +68,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
   override func update(_ currentTime: TimeInterval) {
     // Called before each frame is rendered
+
+    for node in children {
+      if node.position.x < -300 {
+        node.removeFromParent()
+      }
+    }
+
+    if !isGameOver {
+      score += 1
+    }
   }
 }
