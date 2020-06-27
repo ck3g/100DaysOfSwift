@@ -12,7 +12,12 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+
+    // The first technique is debugging with `print` function.
+    print("I'm inside the viewDidLoad() method.")
+
+    print("You can print any number of parameters", 1, 2, 3, 4, 5, true, separator: " - ")
+    print("Some message with a terminator", terminator: "\n> tadam tam tadam... tadam tam tadam... tadatam taa-daa-taam")
   }
 
 
