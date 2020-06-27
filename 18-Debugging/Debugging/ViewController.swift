@@ -23,6 +23,17 @@ class ViewController: UIViewController {
     assert(1 == 1, "Math failure!")
     // assert(1 == 2, "Math failure!") // uncomment to see the failure
     // assert(myReallySlowMethdod() == true, "The slow method returned false, which is a bad thing.")
+
+
+    // Debugging using breakpoints
+    for i in 1...100 {
+      print("Got number \(i).")
+
+      // Click on the line number to set the breakpoint
+      // Click and drag the breakout out, to remove it
+
+      // You can set condition for breakpoint. Right clikc on the breakpoint and choose "Edit breakpoint..."
+    }
   }
 
 
