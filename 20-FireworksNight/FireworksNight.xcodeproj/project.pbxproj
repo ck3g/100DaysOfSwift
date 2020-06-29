@@ -15,6 +15,8 @@
 		34BA3BD524A9C81F00585322 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BA3BD324A9C81F00585322 /* Main.storyboard */; };
 		34BA3BD724A9C82100585322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BA3BD624A9C82100585322 /* Assets.xcassets */; };
 		34BA3BDA24A9C82100585322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BA3BD824A9C82100585322 /* LaunchScreen.storyboard */; };
+		34BA3BE324A9C8E400585322 /* explode.sks in Resources */ = {isa = PBXBuildFile; fileRef = 34BA3BE124A9C8E400585322 /* explode.sks */; };
+		34BA3BE424A9C8E400585322 /* fuse.sks in Resources */ = {isa = PBXBuildFile; fileRef = 34BA3BE224A9C8E400585322 /* fuse.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		34BA3BD624A9C82100585322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34BA3BD924A9C82100585322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34BA3BDB24A9C82100585322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34BA3BE124A9C8E400585322 /* explode.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explode.sks; sourceTree = "<group>"; };
+		34BA3BE224A9C8E400585322 /* fuse.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fuse.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				34BA3BD624A9C82100585322 /* Assets.xcassets */,
 				34BA3BD824A9C82100585322 /* LaunchScreen.storyboard */,
 				34BA3BDB24A9C82100585322 /* Info.plist */,
+				34BA3BE124A9C8E400585322 /* explode.sks */,
+				34BA3BE224A9C8E400585322 /* fuse.sks */,
 			);
 			path = FireworksNight;
 			sourceTree = "<group>";
@@ -136,6 +142,8 @@
 				34BA3BD724A9C82100585322 /* Assets.xcassets in Resources */,
 				34BA3BDA24A9C82100585322 /* LaunchScreen.storyboard in Resources */,
 				34BA3BCE24A9C81F00585322 /* Actions.sks in Resources */,
+				34BA3BE424A9C8E400585322 /* fuse.sks in Resources */,
+				34BA3BE324A9C8E400585322 /* explode.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
