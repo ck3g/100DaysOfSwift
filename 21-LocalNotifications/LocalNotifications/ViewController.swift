@@ -9,13 +9,32 @@
 import UserNotifications
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Register", style: .plain, target: self, action: #selector(registerLocal))
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Schedule", style: .plain, target: self, action: #selector(scheduleLocal))
+  }
+
+  func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    let userInfo = response.notification.request.content.userInfo
+
+    if let customData = userInfo["customData"] as? String {
+      print("Custom data received: \(customData)")
+
+      switch response.actionIdentifier {
+      case UNNotificationDefaultActionIdentifier:
+        print("Default identtifier: The user swiped to unlock")
+      case "show":
+        print("Show more information...")
+      default:
+        break
+      }
+    }
+
+    completionHandler() // Tell iOS that we finished our notification response. That have to be called.
   }
 
   @objc func registerLocal() {
@@ -31,6 +50,8 @@ class ViewController: UIViewController {
   }
 
   @objc func scheduleLocal() {
+    registerCategories()
+
     let center = UNUserNotificationCenter.current()
     center.removeAllPendingNotificationRequests()
 
@@ -52,6 +73,16 @@ class ViewController: UIViewController {
 
     let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
     center.add(request)
+  }
+
+  func registerCategories() {
+    let center = UNUserNotificationCenter.current()
+    center.delegate = self
+
+    let show = UNNotificationAction(identifier: "show", title: "Tell me more...", options: .foreground)
+    let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [], options: [])
+
+    center.setNotificationCategories([category])
   }
 }
 
