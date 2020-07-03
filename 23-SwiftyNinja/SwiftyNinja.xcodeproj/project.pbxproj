@@ -14,6 +14,17 @@
 		349AE8FB24AF425A001404A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 349AE8F924AF425A001404A9 /* Main.storyboard */; };
 		349AE8FD24AF425B001404A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349AE8FC24AF425B001404A9 /* Assets.xcassets */; };
 		349AE90024AF425B001404A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 349AE8FE24AF425B001404A9 /* LaunchScreen.storyboard */; };
+		349AE91224AF4359001404A9 /* sliceHitEnemy.sks in Resources */ = {isa = PBXBuildFile; fileRef = 349AE90724AF4358001404A9 /* sliceHitEnemy.sks */; };
+		349AE91324AF4359001404A9 /* explosion.caf in Resources */ = {isa = PBXBuildFile; fileRef = 349AE90824AF4358001404A9 /* explosion.caf */; };
+		349AE91424AF4359001404A9 /* sliceBombFuse.caf in Resources */ = {isa = PBXBuildFile; fileRef = 349AE90924AF4359001404A9 /* sliceBombFuse.caf */; };
+		349AE91524AF4359001404A9 /* wrong.caf in Resources */ = {isa = PBXBuildFile; fileRef = 349AE90A24AF4359001404A9 /* wrong.caf */; };
+		349AE91624AF4359001404A9 /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = 349AE90B24AF4359001404A9 /* whack.caf */; };
+		349AE91724AF4359001404A9 /* swoosh2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 349AE90C24AF4359001404A9 /* swoosh2.caf */; };
+		349AE91824AF4359001404A9 /* swoosh1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 349AE90D24AF4359001404A9 /* swoosh1.caf */; };
+		349AE91924AF4359001404A9 /* launch.caf in Resources */ = {isa = PBXBuildFile; fileRef = 349AE90E24AF4359001404A9 /* launch.caf */; };
+		349AE91A24AF4359001404A9 /* sliceHitBomb.sks in Resources */ = {isa = PBXBuildFile; fileRef = 349AE90F24AF4359001404A9 /* sliceHitBomb.sks */; };
+		349AE91B24AF4359001404A9 /* swoosh3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 349AE91024AF4359001404A9 /* swoosh3.caf */; };
+		349AE91C24AF4359001404A9 /* sliceFuse.sks in Resources */ = {isa = PBXBuildFile; fileRef = 349AE91124AF4359001404A9 /* sliceFuse.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +37,17 @@
 		349AE8FC24AF425B001404A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		349AE8FF24AF425B001404A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		349AE90124AF425B001404A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		349AE90724AF4358001404A9 /* sliceHitEnemy.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = sliceHitEnemy.sks; sourceTree = "<group>"; };
+		349AE90824AF4358001404A9 /* explosion.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = explosion.caf; sourceTree = "<group>"; };
+		349AE90924AF4359001404A9 /* sliceBombFuse.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sliceBombFuse.caf; sourceTree = "<group>"; };
+		349AE90A24AF4359001404A9 /* wrong.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrong.caf; sourceTree = "<group>"; };
+		349AE90B24AF4359001404A9 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
+		349AE90C24AF4359001404A9 /* swoosh2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh2.caf; sourceTree = "<group>"; };
+		349AE90D24AF4359001404A9 /* swoosh1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh1.caf; sourceTree = "<group>"; };
+		349AE90E24AF4359001404A9 /* launch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = launch.caf; sourceTree = "<group>"; };
+		349AE90F24AF4359001404A9 /* sliceHitBomb.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = sliceHitBomb.sks; sourceTree = "<group>"; };
+		349AE91024AF4359001404A9 /* swoosh3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh3.caf; sourceTree = "<group>"; };
+		349AE91124AF4359001404A9 /* sliceFuse.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = sliceFuse.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +88,17 @@
 				349AE8FC24AF425B001404A9 /* Assets.xcassets */,
 				349AE8FE24AF425B001404A9 /* LaunchScreen.storyboard */,
 				349AE90124AF425B001404A9 /* Info.plist */,
+				349AE90824AF4358001404A9 /* explosion.caf */,
+				349AE90E24AF4359001404A9 /* launch.caf */,
+				349AE90924AF4359001404A9 /* sliceBombFuse.caf */,
+				349AE91124AF4359001404A9 /* sliceFuse.sks */,
+				349AE90F24AF4359001404A9 /* sliceHitBomb.sks */,
+				349AE90724AF4358001404A9 /* sliceHitEnemy.sks */,
+				349AE90D24AF4359001404A9 /* swoosh1.caf */,
+				349AE90C24AF4359001404A9 /* swoosh2.caf */,
+				349AE91024AF4359001404A9 /* swoosh3.caf */,
+				349AE90B24AF4359001404A9 /* whack.caf */,
+				349AE90A24AF4359001404A9 /* wrong.caf */,
 			);
 			path = SwiftyNinja;
 			sourceTree = "<group>";
@@ -128,10 +161,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				349AE91724AF4359001404A9 /* swoosh2.caf in Resources */,
+				349AE91924AF4359001404A9 /* launch.caf in Resources */,
+				349AE91C24AF4359001404A9 /* sliceFuse.sks in Resources */,
+				349AE91324AF4359001404A9 /* explosion.caf in Resources */,
 				349AE8FB24AF425A001404A9 /* Main.storyboard in Resources */,
+				349AE91624AF4359001404A9 /* whack.caf in Resources */,
+				349AE91824AF4359001404A9 /* swoosh1.caf in Resources */,
+				349AE91A24AF4359001404A9 /* sliceHitBomb.sks in Resources */,
 				349AE8F224AF425A001404A9 /* GameScene.sks in Resources */,
+				349AE91224AF4359001404A9 /* sliceHitEnemy.sks in Resources */,
 				349AE8FD24AF425B001404A9 /* Assets.xcassets in Resources */,
+				349AE91424AF4359001404A9 /* sliceBombFuse.caf in Resources */,
+				349AE91524AF4359001404A9 /* wrong.caf in Resources */,
 				349AE90024AF425B001404A9 /* LaunchScreen.storyboard in Resources */,
+				349AE91B24AF4359001404A9 /* swoosh3.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
