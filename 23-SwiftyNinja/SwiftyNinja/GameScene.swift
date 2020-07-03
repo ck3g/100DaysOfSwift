@@ -36,7 +36,13 @@ class GameScene: SKScene {
   }
 
   func createScore() {
+    gameScore = SKLabelNode(fontNamed: "Chalkduster")
+    gameScore.horizontalAlignmentMode = .left
+    gameScore.fontSize = 48
+    addChild(gameScore)
 
+    gameScore.position = CGPoint(x: 8, y: 8)
+    score = 0
   }
 
   func createLives() {
