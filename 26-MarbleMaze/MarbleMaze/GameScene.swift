@@ -28,6 +28,8 @@ class GameScene: SKScene {
     
     loadLevel()
     createPlayer()
+
+    physicsWorld.gravity = .zero
   }
 
   func loadLevel() {
