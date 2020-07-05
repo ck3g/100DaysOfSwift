@@ -30,6 +30,8 @@ class ViewController: UIViewController {
       drawRectangle()
     case 1:
       drawCircle()
+    case 2:
+      drawCheckerboard()
     default:
       break
     }
@@ -64,6 +66,25 @@ class ViewController: UIViewController {
 
       ctx.cgContext.addEllipse(in: rectangle)
       ctx.cgContext.drawPath(using: .fillStroke)
+    }
+
+    imageView.image = image
+  }
+
+  func drawCheckerboard() {
+    let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+
+    let image = renderer.image { ctx in
+      ctx.cgContext.setFillColor(UIColor.black.cgColor)
+
+      for row in 0 ..< 8 {
+        for col in 0 ..< 8 {
+          // if (row + col) % 2 == 0 {
+          if (row + col).isMultiple(of: 2) {
+            ctx.cgContext.fill(CGRect(x: col * 64, y: row * 64, width: 64, height: 64))
+          }
+        }
+      }
     }
 
     imageView.image = image
