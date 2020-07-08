@@ -14,6 +14,7 @@
 		34E9292724B59B9200599264 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E9292524B59B9200599264 /* Main.storyboard */; };
 		34E9292924B59B9400599264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34E9292824B59B9400599264 /* Assets.xcassets */; };
 		34E9292C24B59B9400599264 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E9292A24B59B9400599264 /* LaunchScreen.storyboard */; };
+		34E9293424B59CF000599264 /* BuildingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9293324B59CF000599264 /* BuildingNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		34E9292824B59B9400599264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34E9292B24B59B9400599264 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34E9292D24B59B9400599264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34E9293324B59CF000599264 /* BuildingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				34E9291B24B59B9200599264 /* AppDelegate.swift */,
 				34E9291D24B59B9200599264 /* GameScene.sks */,
 				34E9292124B59B9200599264 /* GameScene.swift */,
+				34E9293324B59CF000599264 /* BuildingNode.swift */,
 				34E9292324B59B9200599264 /* GameViewController.swift */,
 				34E9292524B59B9200599264 /* Main.storyboard */,
 				34E9292824B59B9400599264 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34E9292224B59B9200599264 /* GameScene.swift in Sources */,
+				34E9293424B59CF000599264 /* BuildingNode.swift in Sources */,
 				34E9292424B59B9200599264 /* GameViewController.swift in Sources */,
 				34E9291C24B59B9200599264 /* AppDelegate.swift in Sources */,
 			);
