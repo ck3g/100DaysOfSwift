@@ -39,4 +39,8 @@ class GameScene: SKScene {
     }
   }
 
+  func launch(angle: Int, velocity: Int) {
+    
+  }
+
 }
