@@ -9,78 +9,78 @@
 import UIKit
 
 class ImageViewController: UIViewController {
-	var owner: SelectionViewController!
-	var image: String!
-	var animTimer: Timer!
+  var owner: SelectionViewController!
+  var image: String!
+  var animTimer: Timer!
 
-	var imageView: UIImageView!
+  var imageView: UIImageView!
 
-	override func loadView() {
-		super.loadView()
-		
-		view.backgroundColor = UIColor.black
+  override func loadView() {
+    super.loadView()
 
-		// create an image view that fills the screen
-		imageView = UIImageView()
-		imageView.contentMode = .scaleAspectFit
-		imageView.translatesAutoresizingMaskIntoConstraints = false
-		imageView.alpha = 0
+    view.backgroundColor = UIColor.black
 
-		view.addSubview(imageView)
+    // create an image view that fills the screen
+    imageView = UIImageView()
+    imageView.contentMode = .scaleAspectFit
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.alpha = 0
 
-		// make the image view fill the screen
-		imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-		imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-		imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-		imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    view.addSubview(imageView)
 
-		// schedule an animation that does something vaguely interesting
-		animTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { timer in
-			// do something exciting with our image
-			self.imageView.transform = CGAffineTransform.identity
+    // make the image view fill the screen
+    imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+    imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
 
-			UIView.animate(withDuration: 3) {
-				self.imageView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-			}
-		}
-	}
+    // schedule an animation that does something vaguely interesting
+    animTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { timer in
+      // do something exciting with our image
+      self.imageView.transform = CGAffineTransform.identity
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+      UIView.animate(withDuration: 3) {
+        self.imageView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+      }
+    }
+  }
 
-		title = image.replacingOccurrences(of: "-Large.jpg", with: "")
-		let original = UIImage(named: image)!
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-		let renderer = UIGraphicsImageRenderer(size: original.size)
+    title = image.replacingOccurrences(of: "-Large.jpg", with: "")
+    let original = UIImage(named: image)!
 
-		let rounded = renderer.image { ctx in
-			ctx.cgContext.addEllipse(in: CGRect(origin: CGPoint.zero, size: original.size))
-			ctx.cgContext.closePath()
+    let renderer = UIGraphicsImageRenderer(size: original.size)
 
-			original.draw(at: CGPoint.zero)
-		}
+    let rounded = renderer.image { ctx in
+      ctx.cgContext.addEllipse(in: CGRect(origin: CGPoint.zero, size: original.size))
+      ctx.cgContext.closePath()
 
-		imageView.image = rounded
+      original.draw(at: CGPoint.zero)
     }
 
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
+    imageView.image = rounded
+  }
 
-		imageView.alpha = 0
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
 
-		UIView.animate(withDuration: 3) { [unowned self] in
-			self.imageView.alpha = 1
-		}
-	}
+    imageView.alpha = 0
 
-	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-		let defaults = UserDefaults.standard
-		var currentVal = defaults.integer(forKey: image)
-		currentVal += 1
+    UIView.animate(withDuration: 3) { [unowned self] in
+      self.imageView.alpha = 1
+    }
+  }
 
-		defaults.set(currentVal, forKey:image)
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    let defaults = UserDefaults.standard
+    var currentVal = defaults.integer(forKey: image)
+    currentVal += 1
 
-		// tell the parent view controller that it should refresh its table counters when we go back
-		owner.dirty = true
-	}
+    defaults.set(currentVal, forKey:image)
+
+    // tell the parent view controller that it should refresh its table counters when we go back
+    owner.dirty = true
+  }
 }
